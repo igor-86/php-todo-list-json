@@ -17,3 +17,13 @@ li {
 i {
     color: #581b1b;
 }
+
+.form {
+    width: 300px;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    padding: 1rem;
+    background-color: aliceblue;
+    border-radius: 0 1rem 1rem 0;
+}

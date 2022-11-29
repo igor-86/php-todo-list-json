@@ -27,6 +27,10 @@ $todos = [
     ],
 
 ];
+if (isset($_POST["newTodos"])) {
+    $new_todos = $_POST["newTodos"];
+    $todos[] = ["text" => $new_todos, "done" => true];
+}
 
 $todos_json = json_encode($todos);
 header('Content-Type: application/json');

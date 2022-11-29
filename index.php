@@ -37,8 +37,14 @@
             </div>
 
             <!-- Form -->
-            <div class="form">
 
+        </div>
+        <div class="form">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <input type="text" placeholder="Inserisci nuova attività" class="form-control" v-model="newTodos">
+                    <button class="btn btn-primary mt-3" @click="addTodos">Inserisci</button>
+                </div>
             </div>
         </div>
     </div>
