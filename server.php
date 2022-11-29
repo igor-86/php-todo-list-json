@@ -1,6 +1,6 @@
 <?php
 
-$todos = [
+/* $todos = [
     [
         "text" => "HTML",
         "done" => true,
@@ -26,10 +26,15 @@ $todos = [
         "done" => true,
     ],
 
-];
+]; */
+$string = file_get_contents("todo.json");
+$todos = json_decode($string, true);
+
 if (isset($_POST["newTodos"])) {
     $new_todos = $_POST["newTodos"];
     $todos[] = ["text" => $new_todos, "done" => true];
+
+    file_put_contents("todo.json", json_encode($todos));
 }
 
 $todos_json = json_encode($todos);
