@@ -28,8 +28,8 @@
                 <div class="col-8">
                     <ul>
                         <li v-for="(item,index) in todoList">
-                            <h3>{{item.text}}</h3>
-                            <i class="fa-solid fa-circle-xmark"></i>
+                            <h3 @click="toggleTask(index)" :class="{'text-decoration-line-through' : item.done}">{{item.text}}</h3>
+                            <i class="fa-solid fa-circle-xmark" @click="removeTask(index)"></i>
                         </li>
 
                     </ul>

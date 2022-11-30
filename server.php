@@ -35,6 +35,14 @@ if (isset($_POST["newTodos"])) {
     $todos[] = ["text" => $new_todos, "done" => true];
 
     file_put_contents("todo.json", json_encode($todos));
+} elseif (isset($_POST["doneIndex"])) {
+    $todos[$_POST["doneIndex"]]["done"] = !$todos[$_POST["doneIndex"]]["done"];
+    file_put_contents("todo.json", json_encode($todos));
+} elseif (isset($_POST["removeIndex"])) {
+    $todoIndex = $_POST["removeIndex"];
+    array_splice($todos, $todoIndex, 1);
+
+    file_put_contents("todo.json", json_encode($todos));
 }
 
 $todos_json = json_encode($todos);
